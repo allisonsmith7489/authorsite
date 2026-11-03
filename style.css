@@ -1,0 +1,226 @@
+/* style.css */
+:root {
+    --primary-color: #333;
+    --accent-color: #556B2F;
+    /* Olive green theme fitting her environmental background */
+    --text-color: #222;
+    --bg-color: #fafafa;
+    --card-bg: #ffffff;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: var(--card-bg);
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    margin: 0 0.5rem;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Layout Wrapper */
+.content-wrapper {
+    flex: 1;
+    max-width: 800px;
+    width: 100%;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-style: italic;
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #3d4f22;
+}
+
+/* Bio Section */
+.bio-section {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Contact Form */
+.contact-section {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.email-direct {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.email-direct a {
+    color: var(--accent-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #3d4f22;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #888;
+    font-size: 0.9rem;
+    background-color: #f0f0f0;
+}
+
+/* Hero Portrait Adjustments */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+.hero-portrait {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* Makes the image a neat circle */
+    object-fit: cover;
+    /* Keeps image proportions from stretching */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid var(--card-bg);
+}
+
+/* Switches to a side-by-side layout on wider screens */
+@media (min-width: 600px) {
+    .hero-section {
+        flex-direction: row;
+        text-align: left;
+        padding: 4rem;
+    }
+
+    .hero-portrait {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* Page Cover Banner */
+.page-cover {
+    width: 100%;
+    height: 300px;
+    /* Adjust height as needed */
+    background-image: url('images/pic09.jpg');
+    /* Name of your cover image file */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.cover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15);
+    /* Soft dimming overlay for depth */
+}
+
+/* Adjust wrapper spacing now that there is a cover banner */
+.content-wrapper {
+    margin: -4rem auto 3rem auto;
+    /* Pulls content up to overlap slightly */
+    position: relative;
+    z-index: 2;
+}
